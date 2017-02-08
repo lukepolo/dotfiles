@@ -115,3 +115,6 @@ echo '2. make a .dotfiles-custom/shell/.aliases for your personal commands'
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
+
+echo 'GIT PLUGIN FIX : https://github.com/robbyrussell/oh-my-zsh/issues/4069#issue-89607351'
+
