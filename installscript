@@ -69,6 +69,7 @@ brew install php71-xdebug
 sudo brew services start homebrew/php/php71
 brew install homebrew/php/php71-mcrypt
 brew install homebrew/php/php71-imagick
+brew install php71-mongodb
 
 #install redis
 echo 'install redis'
@@ -87,6 +88,12 @@ echo 'install mysql'
 echo '---------------'
 brew install mysql
 brew services start mysql
+
+#install mongo
+echo 'install mongo'
+echo '---------------'
+brew install mongo
+brew services start mongodb
 
 #install yarn
 echo 'install yarn'
