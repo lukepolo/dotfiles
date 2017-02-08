@@ -1,12 +1,10 @@
 #!/bin/bash
 #
 # bootstrap installs things.
-
 function bootstrapTerminal() {
-	sudo -v #ask password beforehand
+sudo -v #ask password beforehand
 	source ~/.dotfiles/installscript
-}
-
+	}
 
 echo 'Bootstrap terminal'
 echo '------------------'
