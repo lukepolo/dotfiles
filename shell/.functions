@@ -4,11 +4,12 @@ archive () {
 
 function db {
     if [ "$1" = "refresh" ]; then
-        mysql -u root "drop database $2; create database $2"
+        echo "drop database $2;" | mysql -u root
+        echo "create database $2;" | mysql -u root
     elif [ "$1" = "create" ]; then
-        mysql  -u root "create database $2"
+        echo "create database $2;" | mysql -u root
     elif [ "$1" = "drop" ]; then
-        mysql -u root "drop database $2"
+         echo "drop database $2;" | mysql -u root
     fi
 }
 

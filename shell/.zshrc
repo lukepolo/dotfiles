@@ -31,7 +31,7 @@ DEFAULT_USER=`whoami`
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git laravel4 laravel5 composer osx vagrant)
+plugins=(git laravel5 composer osx vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,7 +50,8 @@ for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions}; do
 done
 unset file
 
-export PATH=$HOME/.dotfiles/bin:$PATH
+export PATH=HOME/.dotfiles/bin:$PATH
+
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 #import ssh keys in keychain
@@ -60,3 +61,4 @@ ssh-add -A 2>/dev/null;
 export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_host=127.0.0.1 remote_connect_back=0"
 
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
