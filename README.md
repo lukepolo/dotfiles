@@ -8,5 +8,4 @@ The bootstrap script can be run be cd-ing into the .dotfiles directory and perfo
 ./bootstrap
 ```
 
-
 #### Credits to https://github.com/freekmurze/dotfiles
