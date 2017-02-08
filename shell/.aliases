@@ -1,0 +1,72 @@
+ssh-add -K ~/.ssh/id_rsa
+
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+
+export PATH=~/.config/composer/vendor/bin:$PATH
+export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
+
+# Easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Host file
+alias hostfile="sudo vi /etc/hosts"
+
+# Homestead Helpers
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+alias vm="ssh vagrant@127.0.0.1 -p 2222"
+
+# Laravel Helpers
+alias ut="./vendor/bin/phpunit"
+alias wp="npm run webpack"
+alias live="npm run hmr"
+alias prod="npm run production"
+
+# Valet Helpers
+alias share="valet share"
+
+# GIT
+alias nah="git reset --hard HEAD"
+alias switch="git checkout"
+alias pull="git pull origin"
+
+function pushme {
+    br=`git branch | grep "*"`
+
+    params=''
+    for i in $*;
+    do
+        params=" $params $i"
+    done
+
+    git add --all
+    git commit -m "$params"
+    git push origin ${br/* /}
+}
+
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Lock the screen
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Flush Directory Service cache
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# List all files colorized in long format
+alias l="ls -laF"
+
+# MYSQL
+alias mysqladm='mysql -u root'
