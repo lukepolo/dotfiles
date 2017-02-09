@@ -120,9 +120,3 @@ echo 'Some optional tidbits'
 
 echo '1. set some sensible os x defaults by running: $HOME/.dotfiles/osx/set-defaults.sh'
 echo '2. make a .dotfiles-custom/shell/.aliases for your personal commands'
-
-echo '++++++++++++++++++++++++++++++'
-echo '++++++++++++++++++++++++++++++'
-
-echo 'GIT PLUGIN FIX : https://github.com/robbyrussell/oh-my-zsh/issues/4069#issue-89607351'
-
