@@ -22,10 +22,6 @@ curl -sS https://getcomposer.org/installer | php
 echo 'move composer to /usr/local/bin/composer'
 mv -f composer.phar /usr/local/bin/composer
 
-#activate z
-cd ~/.dotfiles/shell
-chmod +x z.sh
-
 #install homebrew
 echo 'install homebrew'
   echo '----------------'
@@ -110,6 +106,11 @@ echo 'install gulp'
 echo '------------'
 npm install -g gulp
 
+# install bower
+echo 'install bower'
+echo '------------'
+npm install -g bower
+
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'all done'
@@ -119,9 +120,3 @@ echo 'Some optional tidbits'
 
 echo '1. set some sensible os x defaults by running: $HOME/.dotfiles/osx/set-defaults.sh'
 echo '2. make a .dotfiles-custom/shell/.aliases for your personal commands'
-
-echo '++++++++++++++++++++++++++++++'
-echo '++++++++++++++++++++++++++++++'
-
-echo 'GIT PLUGIN FIX : https://github.com/robbyrussell/oh-my-zsh/issues/4069#issue-89607351'
-
