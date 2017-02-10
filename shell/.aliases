@@ -21,7 +21,8 @@ alias vm="ssh vagrant@127.0.0.1 -p 2222"
 
 # Laravel Helpers
 alias ut="./vendor/bin/phpunit"
-alias wp="npm run webpack"
+alias dev="npm run dev"
+alias watch="npm run watch"
 alias live="npm run hmr"
 alias prod="npm run production"
 
