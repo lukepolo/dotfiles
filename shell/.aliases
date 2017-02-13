@@ -69,5 +69,8 @@ alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # List all files colorized in long format
 alias l="ls -laF"
 
+# Remove folders
+alias rf="rm -rf"
+
 # MYSQL
 alias mysqladm='mysql -u root'
