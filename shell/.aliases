@@ -26,6 +26,9 @@ alias watch="npm run watch"
 alias live="npm run hmr"
 alias prod="npm run production"
 
+alias work="php artisan queue:work --tries=1"
+alias retry="php artisan queue:retry all"
+
 # Valet Helpers
 alias share="valet share"
 
