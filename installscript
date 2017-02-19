@@ -96,6 +96,11 @@ echo 'install yarn'
 echo '------------'
 brew install yarn
 
+# dos2unix
+echo 'install dos2unix'
+echo '------------'
+brew install dos2unix
+
 #install file watch (needed for watching phpunit tests)
 echo 'install onchange'
 echo '----------------'
