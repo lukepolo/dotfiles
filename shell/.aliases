@@ -30,6 +30,8 @@ alias prod="npm run production"
 alias work="php artisan queue:work --tries=1"
 alias retry="php artisan queue:retry all"
 
+alias routes="php artisan laroute:generate"
+
 # Valet Helpers
 alias share="valet share"
 
