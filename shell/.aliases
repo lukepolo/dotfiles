@@ -39,6 +39,7 @@ alias share="valet share"
 alias nah="git reset --hard HEAD"
 alias switch="git checkout"
 alias pull="git pull origin"
+alias amend="git commit --amend"
 
 function pushme {
     br=`git branch | grep "*"`
@@ -49,8 +50,7 @@ function pushme {
         params=" $params $i"
     done
 
-    git commit -am "$params"
-    git push origin ${br/* /}
+    echo $params
 }
 
 
