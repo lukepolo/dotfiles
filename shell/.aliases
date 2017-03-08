@@ -36,7 +36,7 @@ alias routes="php artisan laroute:generate"
 alias share="valet share"
 
 # GIT
-alias status="git status"
+alias gst="git status"
 alias nah="git reset --hard HEAD"
 alias switch="git checkout"
 alias pull="git pull origin"
