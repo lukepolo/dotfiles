@@ -20,6 +20,7 @@ alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset 
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
 
 # Laravel Helpers
+alias artisan="php artisan"
 alias ut="./vendor/bin/phpunit"
 alias dev="npm run dev"
 alias watch="npm run watch"
@@ -46,8 +47,7 @@ function pushme {
         params=" $params $i"
     done
 
-    git add --all
-    git commit -m "$params"
+    git commit -am "$params"
     git push origin ${br/* /}
 }
 
