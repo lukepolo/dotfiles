@@ -53,7 +53,8 @@ function pushme {
         params=" $params $i"
     done
     params=$(echo $params | sed 's,^ *,,; s, *$,,')
-    git commit -am "$params"
+    git add --all
+    git commit -m "$params"
     git push origin ${br/* /}
 }
 
