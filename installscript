@@ -116,6 +116,11 @@ echo 'install bower'
 echo '------------'
 npm install -g bower
 
+# install git-open
+echo 'install git-open'
+echo '------------'
+npm install -g git-open
+
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'all done'

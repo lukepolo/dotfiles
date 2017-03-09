@@ -20,6 +20,7 @@ alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset 
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
 
 # Laravel Helpers
+alias artisan="php artisan"
 alias ut="./vendor/bin/phpunit"
 alias dev="npm run dev"
 alias watch="npm run watch"
@@ -35,9 +36,13 @@ alias routes="php artisan laroute:generate"
 alias share="valet share"
 
 # GIT
+alias gst="git status"
 alias nah="git reset --hard HEAD"
 alias switch="git checkout"
 alias pull="git pull origin"
+alias amend="git commit --amend"
+alias stash="git stash --include-untracked"
+alias pop="git stash pop"
 
 function pushme {
     br=`git branch | grep "*"`
@@ -47,12 +52,11 @@ function pushme {
     do
         params=" $params $i"
     done
-
+    params=$(echo $params | sed 's,^ *,,; s, *$,,')
     git add --all
     git commit -m "$params"
     git push origin ${br/* /}
 }
-
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
