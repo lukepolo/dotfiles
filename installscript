@@ -79,6 +79,11 @@ echo '---------------------'
 composer global require laravel/valet
 valet install
 
+#install security-checker
+echo 'install security checker'
+echo '---------------------'
+composer global require sensiolabs/security-checker
+
 #install mysql
 echo 'install mysql'
 echo '---------------'

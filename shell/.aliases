@@ -83,3 +83,6 @@ alias rf="rm -rf"
 
 # MYSQL
 alias mysqladm='mysql -u root'
+
+# Checks the composer packages for security vulnerabilities
+alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-checker security:check composer.lock'
