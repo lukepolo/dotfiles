@@ -91,4 +91,4 @@ alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-check
 alias rm_brew="brew list | xargs brew rm"
 
 # Fixes Files ^M "command not found: ^M"
-alias fixfile="dos2unix "
+alias fixfile="dos2unix"
