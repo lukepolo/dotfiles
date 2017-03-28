@@ -28,6 +28,6 @@ xdebug() {
    fi
 }
 
-issue() {
+commit() {
     ~/.dotfiles/shell/commit.sh
 }
