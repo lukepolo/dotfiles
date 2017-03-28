@@ -61,4 +61,8 @@ ssh-add -A 2>/dev/null;
 export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_host=127.0.0.1 remote_connect_back=0"
 
 export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+# import environment variables for the docker-cli
+eval "$(docker-machine env dev)"

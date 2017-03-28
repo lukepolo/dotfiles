@@ -92,3 +92,6 @@ alias rm_brew="brew list | xargs brew rm"
 
 # Fixes Files ^M "command not found: ^M"
 alias fixfile="dos2unix"
+
+# Starts a new ubuntu server
+alias ubuntu="docker run -it --rm -v `pwd`:/workspace phusion/baseimage bash"
