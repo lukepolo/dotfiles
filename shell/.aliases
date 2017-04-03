@@ -86,8 +86,19 @@ alias rf="rm -rf"
 # MYSQL
 alias mysqladm='mysql -u root'
 
+# Checks the composer packages for security vulnerabilities
+alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-checker security:check composer.lock'
+
 # Brew Helpers
 alias rm_brew="brew list | xargs brew rm"
 
+# Fixes Files ^M "command not found: ^M"
+alias fixfile="dos2unix"
+
+# Starts a new ubuntu server
+alias ubuntu="docker run -it --rm -v `pwd`:/workspace phusion/baseimage bash"
+
+
+# Access servers quickly
 alias forge=ssh forge@
 alias codepier=ssh codepier@

@@ -27,3 +27,7 @@ xdebug() {
       echo "xdebug is now inactive";
    fi
 }
+
+commit() {
+    ~/.dotfiles/shell/commit.sh
+}
