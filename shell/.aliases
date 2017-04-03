@@ -27,6 +27,8 @@ alias watch="npm run watch"
 alias live="npm run hmr"
 alias prod="npm run production"
 
+alias gprod="NODE_ENV=production gulp --production"
+
 alias work="php artisan queue:work --tries=1"
 alias retry="php artisan queue:retry all"
 
@@ -86,3 +88,6 @@ alias mysqladm='mysql -u root'
 
 # Brew Helpers
 alias rm_brew="brew list | xargs brew rm"
+
+alias forge=ssh forge@
+alias codepier=ssh codepier@
