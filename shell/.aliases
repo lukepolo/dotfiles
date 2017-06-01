@@ -27,6 +27,8 @@ alias watch="npm run watch"
 alias live="npm run hmr"
 alias prod="npm run production"
 
+alias gprod="NODE_ENV=production gulp --production"
+
 alias work="php artisan queue:work --tries=1"
 alias retry="php artisan queue:retry all"
 
@@ -99,3 +101,7 @@ alias ubuntu="docker run -it --rm -v `pwd`:/workspace phusion/baseimage bash"
 alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-checker security:check composer.lock'
 
 alias outdated="composer outdated"
+
+# Access servers quickly
+alias forge=ssh forge@
+alias codepier=ssh codepier@
