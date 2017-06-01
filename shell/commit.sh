@@ -15,3 +15,4 @@ br=`git branch | grep "*"`
 git add --all
 git commit -m "$issue$message"
 git push origin ${br/* /}
+

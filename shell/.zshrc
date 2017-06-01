@@ -66,3 +66,7 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # import environment variables for the docker-cli
 eval "$(docker-machine env dev)"
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
