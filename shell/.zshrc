@@ -35,9 +35,17 @@ plugins=(git laravel5 composer osx vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
+#################################################################
+### Custom Config
+#################################################################
+
 # Allow to use home and end in terminal
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
+
+#################################################################
+### Load Aliases functions exports
+#################################################################
 
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -50,30 +58,40 @@ for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions}; do
 done
 unset file
 
-export PATH=HOME/.dotfiles/bin:$PATH
+#################################################################
+### Paths
+#################################################################
 
+export PATH=HOME/.dotfiles/bin:$PATH
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
-#import ssh keys in keychain
-ssh-add -A 2>/dev/null;
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
 
-#setup xdebug
+#################################################################
+### SSH Key
+#################################################################
+
+#import ssh keys in keychain
+#ssh-add -A 2>/dev/null;
+#ssh-add -K ~/.ssh/id_rsa
+
+#################################################################
+### PHP
+#################################################################
+
 export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_host=127.0.0.1 remote_connect_back=0"
 
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+#################################################################
+### Docker
+#################################################################
 
 # import environment variables for the docker-cli
 eval "$(docker-machine env dev)"
 
+#################################################################
+### Node Manager
+#################################################################
+
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-ssh-add -K ~/.ssh/id_rsa
-
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-
-export PATH=~/.config/composer/vendor/bin:$PATH
-export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
