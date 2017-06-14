@@ -1,3 +1,7 @@
+#################################################################
+### OS
+#################################################################
+
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$@"
@@ -6,6 +10,10 @@ function mkd() {
 archive () {
    zip -r "$1".zip -i "$1" ;
 }
+
+#################################################################
+### MySQL
+#################################################################
 
 function db {
     if [ "$1" = "refresh" ]; then
@@ -18,7 +26,31 @@ function db {
     fi
 }
 
+#################################################################
+### GIT
+#################################################################
+
+# Pushes all the code up in the current directory
+function pushme {
+
+    branch=`git branch | grep "*"`
+
+    params=''
+    
+    for i in $*;
+    do
+        params=" $params $i"
+    done
+    
+    params=$(echo $params | sed 's,^ *,,; s, *$,,')
+    
+    git add --all
+    git commit -m "$params"
+    git push origin ${branch/* /}
+}
+
 commit() {
+
     echo What taiga issue are you working on?
     read issue
 
@@ -30,9 +62,9 @@ commit() {
         issue="TG-$issue : "
     fi
 
-    br=`git branch | grep "*"`
+    branch=`git branch | grep "*"`
 
     git add --all
     git commit -m "$issue$message"
-    git push origin ${br/* /}
+    git push origin ${branch/* /}
 }

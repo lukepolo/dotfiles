@@ -42,21 +42,6 @@ alias amend="git commit --amend"
 alias nah="git reset --hard HEAD"
 alias stash="git stash --include-untracked"
 
-# Pushes all the code up in the current directory
-function pushme {
-    br=`git branch | grep "*"`
-
-    params=''
-    for i in $*;
-    do
-        params=" $params $i"
-    done
-    params=$(echo $params | sed 's,^ *,,; s, *$,,')
-    git add --all
-    git commit -m "$params"
-    git push origin ${br/* /}
-}
-
 #################################################################
 ### Composer
 #################################################################
