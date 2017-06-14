@@ -73,8 +73,8 @@ export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
 #################################################################
 
 #import ssh keys in keychain
-#ssh-add -A 2>/dev/null;
-#ssh-add -K ~/.ssh/id_rsa
+ssh-add -A 2>/dev/null
+ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 
 #################################################################
 ### PHP
@@ -87,7 +87,11 @@ export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_ho
 #################################################################
 
 # import environment variables for the docker-cli
-eval "$(docker-machine env dev)"
+if docker-machine status default | grep "Running" &> /dev/null
+  then
+    eval eval "$(docker-machine env default)"
+fi
+
 
 #################################################################
 ### Node Manager
