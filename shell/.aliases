@@ -5,6 +5,9 @@
 alias rf="rm -rf"
 alias hosts="sudo vi /etc/hosts"
 
+# List all files colorized in long format
+alias l="ls -laF"
+
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
@@ -18,10 +21,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-
-
-# List all files colorized in long format
-alias l="ls -laF"
 
 
 ### Network

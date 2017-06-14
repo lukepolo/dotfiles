@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#################################################################
+### GIT
+#################################################################
+
 #global gitigore
 ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
 git config --global core.excludesfile $HOME/.global-gitignore
@@ -7,7 +11,10 @@ git config --global core.excludesfile $HOME/.global-gitignore
 #global git config setup
 git config --global core.autocrlf true
 
-#install zsh
+#################################################################
+### ZSH
+#################################################################
+
 echo 'install oh-my-zhs'
 echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
@@ -17,7 +24,10 @@ curl -L http://install.ohmyz.sh | sh
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 
-#install composer
+#################################################################
+### Composer
+#################################################################
+
 echo 'install composer'
 echo '----------------'
 cd ~/.dotfiles
@@ -25,39 +35,31 @@ curl -sS https://getcomposer.org/installer | php
 echo 'move composer to /usr/local/bin/composer'
 mv -f composer.phar /usr/local/bin/composer
 
-#install homebrew
+### Global Composer Packages
+
+echo 'install security checker'
+echo '---------------------'
+composer global require sensiolabs/security-checker
+
+echo 'install laravel valet'
+echo '---------------------'
+composer global require laravel/valet
+valet install
+
+#################################################################
+### Homebrew
+#################################################################
+
 echo 'install homebrew'
 echo '----------------'
 echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-#install wget
-echo 'install wget'
-echo '------------'
-brew install wget --overwrite
+#################################################################
+### PHP
+#################################################################
 
-#install httpie
-echo 'install httpie'
-echo '------------'
-brew install httpie
-
-#install ack
-echo 'install ack'
-echo '------------'
-brew install ack
-
-#install envoy
-echo 'install laravel envoy'
-echo '---------------------'
-composer global require "laravel/envoy=~1.0"
-
-#install php-cs-fixer
-echo 'install php-cs-fixer'
-echo '--------------------'
-#composer global require friendsofphp/php-cs-fixer
-
-#install php
 echo 'install php'
 echo '------------'
 brew tap homebrew/dupes
@@ -72,46 +74,58 @@ brew install homebrew/php/php71-mcrypt
 brew install homebrew/php/php71-imagick
 brew install homebrew/php/php71-mongodb
 
-#install redis
+#################################################################
+### Redis
+#################################################################
+
 echo 'install redis'
 echo '------------'
 brew install redis
 brew install homebrew/php/php71-redis
 
-#install valet
-echo 'install laravel valet'
-echo '---------------------'
-composer global require laravel/valet
-valet install
+#################################################################
+### MySQL
+#################################################################
 
-#install security-checker
-echo 'install security checker'
-echo '---------------------'
-composer global require sensiolabs/security-checker
-
-#install mysql
 echo 'install mysql'
 echo '---------------'
 brew install mysql
 brew services start mysql
 
-#install mongo
+#################################################################
+### Mongo
+#################################################################
+
 echo 'install mongo'
 echo '---------------'
 brew install mongo
 brew services start mongodb
 
-#install yarn
+#################################################################
+### Node
+#################################################################
+
 echo 'install yarn'
 echo '------------'
 brew install yarn
 
-# dos2unix
-echo 'install dos2unix'
-echo '------------'
-brew install dos2unix
+# install file watch (needed for watching phpunit tests)
+echo 'install onchange'
+echo '----------------'
+npm install -g onchange
 
-# docker
+echo 'install bower'
+echo '------------'
+npm install -g bower
+
+echo 'install git-open'
+echo '------------'
+npm install -g git-open
+
+#################################################################
+### Docker
+#################################################################
+
 echo 'install docker'
 echo '------------'
 brew install docker docker-machine
@@ -120,25 +134,17 @@ brew services start docker-machine
 # create the vm
 docker-machine create -d virtualbox dev
 
-#install file watch (needed for watching phpunit tests)
-echo 'install onchange'
-echo '----------------'
-npm install -g onchange
+#################################################################
+### Random
+#################################################################
 
-# install gulp
-echo 'install gulp'
+echo 'install dos2unix'
 echo '------------'
-npm install -g gulp
+brew install dos2unix
 
-# install bower
-echo 'install bower'
-echo '------------'
-npm install -g bower
-
-# install git-open
-echo 'install git-open'
-echo '------------'
-npm install -g git-open
+#################################################################
+### Tidbits
+#################################################################
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
