@@ -70,3 +70,10 @@ eval "$(docker-machine env dev)"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+ssh-add -K ~/.ssh/id_rsa
+
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+
+export PATH=~/.config/composer/vendor/bin:$PATH
+export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH

@@ -1,51 +1,49 @@
-ssh-add -K ~/.ssh/id_rsa
+#################################################################
+### OS Helpers
+#################################################################
 
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
+alias rf="rm -rf"
+alias hosts="sudo vi /etc/hosts"
 
-export PATH=~/.config/composer/vendor/bin:$PATH
-export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Easier navigation
+# Show the lock screen
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+
+### Navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# Host file
-alias hostfile="sudo vi /etc/hosts"
 
-# Homestead Helpers
-alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
-alias vm="ssh vagrant@127.0.0.1 -p 2222"
+# List all files colorized in long format
+alias l="ls -laF"
 
-# Laravel Helpers
-alias artisan="php artisan"
-alias ut="./vendor/bin/phpunit"
-alias dev="npm run dev"
-alias watch="npm run watch"
-alias live="npm run hmr"
-alias prod="npm run production"
 
-alias gprod="NODE_ENV=production gulp --production"
+### Network
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
-alias work="php artisan queue:work --tries=1"
-alias retry="php artisan queue:retry all"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
-alias routes="php artisan laroute:generate"
 
-# Valet Helpers
-alias share="valet share"
+#################################################################
+### GIT Helpers
+#################################################################
 
-# GIT
 alias gst="git status"
-alias nah="git reset --hard HEAD"
+alias pop="git stash pop"
 alias switch="git checkout"
 alias pull="git pull origin"
 alias amend="git commit --amend"
+alias nah="git reset --hard HEAD"
 alias stash="git stash --include-untracked"
-alias pop="git stash pop"
 
+# Pushes all the code up in the current directory
 function pushme {
     br=`git branch | grep "*"`
 
@@ -60,48 +58,59 @@ function pushme {
     git push origin ${br/* /}
 }
 
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+#################################################################
+### Composer
+#################################################################
 
-# IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias outdated="composer outdated"
+alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-checker security:check composer.lock'
 
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
 
-# Lock the screen
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+#################################################################
+### Laravel Helpers
+#################################################################
 
-# Flush Directory Service cache
-alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+alias artisan="php artisan"
 
-# List all files colorized in long format
-alias l="ls -laF"
+#### Valet
+# Share with ngrok
+alias share="valet share"
 
-# Remove folders
-alias rf="rm -rf"
 
-# MYSQL
-alias mysqladm='mysql -u root'
+#### Testing
+alias dusk="php artisan dusk"
+alias ut="./vendor/bin/phpunit"
 
-# Brew Helpers
-alias rm_brew="brew list | xargs brew rm"
+
+#### Webpack
+alias dev="npm run dev"
+alias live="npm run hmr"
+alias watch="npm run watch"
+alias prod="npm run production"
+
+
+#### Workers
+alias retry="php artisan queue:retry all"
+alias work="php artisan queue:work --tries=1"
+
+
+#### Homestead
+alias vm="ssh vagrant@127.0.0.1 -p 2222"
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+
+
+#################################################################
+### CodePier Helpers
+#################################################################
+alias routes="php artisan laroute:generate"
+
+
+#################################################################
+### Random
+#################################################################
 
 # Fixes Files ^M "command not found: ^M"
 alias fixfile="dos2unix"
 
-# Starts a new ubuntu server
-alias ubuntu="docker run -it --rm -v `pwd`:/workspace phusion/baseimage bash"
-
-##### Composer Aliases
-
-# Checks the composer packages for security vulnerabilities
-alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-checker security:check composer.lock'
-
-alias outdated="composer outdated"
-
-# Access servers quickly
-alias forge=ssh forge@
-alias codepier=ssh codepier@
+# Brew Helpers
+alias rm_brew="brew list | xargs brew rm"
