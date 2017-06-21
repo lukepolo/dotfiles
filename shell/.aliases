@@ -97,4 +97,4 @@ alias routes="php artisan laroute:generate"
 alias fixfile="dos2unix"
 
 # Brew Helpers
-alias rm_brew="brew list | xargs brew rm"
+alias rmbrew="brew list | xargs brew rm"

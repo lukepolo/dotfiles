@@ -68,3 +68,15 @@ commit() {
     git commit -m "$issue$message"
     git push origin ${branch/* /}
 }
+
+#################################################################
+### NVM
+#################################################################
+
+nvmset() {
+    echo "$1" > .nvmrc
+}
+
+nvmdefault() {
+    nvm alias default $1
+}
