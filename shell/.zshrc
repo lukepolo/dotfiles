@@ -17,7 +17,7 @@ bindkey  "^[[F"   end-of-line
 
 # Load the shell dotfiles, and then some:
 for file in ~/.dotfiles/shell/.{exports,aliases,functions}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
 unset file
