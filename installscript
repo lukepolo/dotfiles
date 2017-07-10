@@ -130,6 +130,10 @@ echo 'install git-open'
 echo '------------'
 npm install -g git-open
 
+echo 'install release-it'
+echo '------------'
+npm install release-it -g
+
 #################################################################
 ### Docker
 #################################################################

@@ -16,7 +16,7 @@ bindkey  "^[[F"   end-of-line
 #################################################################
 
 # Load the shell dotfiles, and then some:
-for file in ~/.dotfiles/shell/.{exports,aliases,functions}; do
+for file in ~/.dotfiles/shell/.{exports,aliases,functions,secrets}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 

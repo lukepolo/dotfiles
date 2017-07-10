@@ -86,8 +86,15 @@ alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset 
 #################################################################
 ### CodePier Helpers
 #################################################################
+
 alias routes="php artisan laroute:generate"
 
+
+#################################################################
+### Release IT - https://webpro.github.io/release-it
+#################################################################
+
+alias release="release-it"
 
 #################################################################
 ### Random
