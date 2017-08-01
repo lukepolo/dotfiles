@@ -15,13 +15,12 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Show the lock screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-
 ### Navigation
+alias finder="open ."
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-
 
 ### Network
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
@@ -41,6 +40,7 @@ alias pull="git pull origin"
 alias amend="git commit --amend"
 alias nah="git reset --hard HEAD"
 alias stash="git stash --include-untracked"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 #################################################################
 ### Composer
@@ -95,6 +95,7 @@ alias routes="php artisan laroute:generate"
 #################################################################
 
 alias release="release-it"
+
 
 #################################################################
 ### Random

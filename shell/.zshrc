@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="miloshadzic"
 DEFAULT_USER=`whoami`
-plugins=(zsh-nvm git laravel5 composer osx vagrant)
+plugins=(zsh-nvm laravel5)
 
 #################################################################
 ### Custom Config

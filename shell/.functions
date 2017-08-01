@@ -51,7 +51,7 @@ function pushme {
 
 commit() {
 
-    echo What taiga issue are you working on?
+    echo What JIRA issue are you working on?
     read issue
 
     echo What did you work on?
@@ -59,7 +59,7 @@ commit() {
 
     if [ ! -z "$issue" ]
     then
-        issue="TG-$issue : "
+        issue="$issue : "
     fi
 
     branch=`git branch | grep "*"`
