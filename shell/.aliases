@@ -106,3 +106,6 @@ alias fixfile="dos2unix"
 
 # Brew Helpers
 alias rmbrew="brew list | xargs brew rm"
+
+# Starts Minio Server
+alias s3="open http://127.0.0.1:9005; minio server --address :9005 /tmp/minio"
