@@ -25,6 +25,36 @@ rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 
 #################################################################
+### Homebrew
+#################################################################
+
+echo 'install homebrew'
+echo '----------------'
+echo install homebrew
+sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+#################################################################
+### PHP
+#################################################################
+
+echo 'install php'
+echo '------------'
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
+brew install --with-openssl curl
+echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.zshrc
+brew install --with-homebrew-curl php71
+brew install php71-xdebug
+sudo brew services start homebrew/php/php71
+brew install homebrew/php/php71-mcrypt
+brew install homebrew/php/php71-imagick
+brew install homebrew/php/php71-mongodb
+
+
+#################################################################
 ### Composer
 #################################################################
 
@@ -45,34 +75,6 @@ echo 'install laravel valet'
 echo '---------------------'
 composer global require laravel/valet
 valet install
-
-#################################################################
-### Homebrew
-#################################################################
-
-echo 'install homebrew'
-echo '----------------'
-echo install homebrew
-sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-#################################################################
-### PHP
-#################################################################
-
-echo 'install php'
-echo '------------'
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew install --with-openssl curl
-echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.zshrc
-brew install --with-homebrew-curl php71
-brew install php71-xdebug
-sudo brew services start homebrew/php/php71
-brew install homebrew/php/php71-mcrypt
-brew install homebrew/php/php71-imagick
-brew install homebrew/php/php71-mongodb
 
 #################################################################
 ### Redis
