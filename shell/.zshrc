@@ -27,8 +27,6 @@ unset file
 #################################################################
 
 export PATH=HOME/.dotfiles/bin:$PATH
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
@@ -62,8 +60,8 @@ fi
 #################################################################
 
 ## You can only select one of these :-(
-#export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
+export NVM_LAZY_LOAD=true
+#export NVM_AUTO_USE=true
 
 
 #################################################################
