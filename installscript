@@ -45,7 +45,6 @@ brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
 brew install --with-openssl curl
-echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.zshrc
 brew install --with-homebrew-curl php71
 brew install php71-xdebug
 brew services start homebrew/php/php71
