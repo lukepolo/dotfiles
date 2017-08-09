@@ -54,7 +54,7 @@ export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_ho
 # import environment variables for the docker-cli
 if docker-machine status default | grep "Running" &> /dev/null
   then
-    eval eval "$(docker-machine env default)"
+    eval "$(docker-machine env default)"
 fi
 
 #################################################################
