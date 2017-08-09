@@ -50,10 +50,10 @@ brew install --with-homebrew-curl php71
 brew install php71-xdebug
 sudo brew services start homebrew/php/php71
 brew install homebrew/php/php71-mcrypt
-brew install homebrew/php/php71-imagick
+brew install -s homebrew/php/php71-imagick
 brew install homebrew/php/php71-mongodb
 brew install homebrew/php/php71-intl
-
+brew install homebrew/php/php71-redis
 
 #################################################################
 ### Composer
@@ -84,7 +84,6 @@ valet install
 echo 'install redis'
 echo '------------'
 brew install redis
-brew install homebrew/php/php71-redis
 
 #################################################################
 ### MySQL
@@ -170,6 +169,13 @@ brew install dos2unix
 ### Tidbits
 #################################################################
 
+echo 'fixing ZSH'
+echo '------------'
+cd $ZSH
+git config core.autocrlf input
+git rm --cached -r .
+git reset --hard
+
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'all done'
@@ -179,3 +185,9 @@ echo 'Some optional tidbits'
 
 echo '1. set some sensible os x defaults by running: $HOME/.dotfiles/osx/set-defaults.sh'
 echo '2. make a .dotfiles-custom/shell/.aliases for your personal commands'
+
+echo '++++++++++++++++++++++++++++++'
+echo 'Sometimes ZSH has issues with line endings after installing. Just copy the error and paste into their issues https://github.com/robbyrussell/oh-my-zsh/issues'
+
+echo '++++++++++++++++++++++++++++++'
+echo 'Please report issues!'
