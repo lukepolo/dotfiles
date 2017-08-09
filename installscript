@@ -52,6 +52,7 @@ sudo brew services start homebrew/php/php71
 brew install homebrew/php/php71-mcrypt
 brew install homebrew/php/php71-imagick
 brew install homebrew/php/php71-mongodb
+brew install homebrew/php/php71-intl
 
 
 #################################################################
