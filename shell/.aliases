@@ -54,7 +54,9 @@ alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-check
 ### Laravel Helpers
 #################################################################
 
-alias artisan="php artisan"
+alias art="php artisan"
+alias fresh="php artisan migrate:refresh --seed"
+
 
 #### Valet
 # Share with ngrok
@@ -63,8 +65,8 @@ alias share="valet share"
 
 #### Testing
 alias dusk="php artisan dusk"
-alias ut="./vendor/bin/phpunit"
-
+alias t="./vendor/bin/phpunit"
+alias tf="./vendor/bin/phpunit --filter"
 
 #### Webpack
 alias dev="npm run dev"
