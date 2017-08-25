@@ -79,6 +79,8 @@ alias prod="npm run production"
 alias retry="php artisan queue:retry all"
 alias work="php artisan queue:work --tries=1"
 
+### Horizon
+alias workers="php artisan horizon"
 
 #### Homestead
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
