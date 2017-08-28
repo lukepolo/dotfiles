@@ -81,6 +81,9 @@ alias work="php artisan queue:work --tries=1"
 
 ### Horizon
 alias workers="php artisan horizon"
+alias stopWorkers="php artisan horizon:terminate"
+alias pauseWorkers="php artisan horizon:pause"
+alias continue="php artisan horizon:continue"
 
 #### Homestead
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
