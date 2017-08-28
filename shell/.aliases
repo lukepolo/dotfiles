@@ -55,7 +55,7 @@ alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-check
 #################################################################
 
 alias art="php artisan"
-alias fresh="php artisan migrate:refresh --seed"
+alias fresh="php artisan migrate:fresh --seed"
 
 
 #### Valet
