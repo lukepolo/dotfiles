@@ -51,7 +51,9 @@ brew tap homebrew/homebrew-php
 brew install --with-openssl curl
 brew install --with-homebrew-curl php71
 brew install php71-xdebug
+
 brew services start homebrew/php/php71
+
 brew install homebrew/php/php71-mcrypt
 brew install -s homebrew/php/php71-imagick
 brew install homebrew/php/php71-mongodb
@@ -75,11 +77,6 @@ echo 'install security checker'
 echo '---------------------'
 composer global require sensiolabs/security-checker
 
-echo 'install laravel valet'
-echo '---------------------'
-composer global require laravel/valet
-valet install
-
 #################################################################
 ### Redis
 #################################################################
@@ -88,6 +85,15 @@ echo 'install redis'
 echo '------------'
 brew install redis
 brew services start redis
+
+#################################################################
+### Valet
+#################################################################
+
+echo 'install laravel valet'
+echo '---------------------'
+composer global require laravel/valet
+valet install
 
 #################################################################
 ### MySQL
