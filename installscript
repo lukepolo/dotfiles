@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# hide "last login" line when starting a new terminal session
+touch $HOME/.hushlogin
+
 #################################################################
 ### GIT
 #################################################################
@@ -7,6 +10,7 @@
 # global gitigore
 ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
 git config --global core.excludesfile $HOME/.global-gitignore
+clear
 
 # global git config setup
 git config --global core.autocrlf true
@@ -83,6 +87,7 @@ valet install
 echo 'install redis'
 echo '------------'
 brew install redis
+brew services start redis
 
 #################################################################
 ### MySQL
@@ -170,10 +175,14 @@ brew install dos2unix
 
 echo 'fixing ZSH'
 echo '------------'
-cd $ZSH
+
+cd ~/.oh-my-zsh
+
 git config core.autocrlf input
 git rm --cached -r .
 git reset --hard
+
+dos2unix ~/.oh-my-zsh/custom/plugins/zsh-nvm/zsh-nvm.plugin.zsh
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
