@@ -174,10 +174,14 @@ brew install dos2unix
 
 echo 'fixing ZSH'
 echo '------------'
-cd $ZSH
+
+cd ~/.oh-my-zsh
+
 git config core.autocrlf input
 git rm --cached -r .
 git reset --hard
+
+dos2unix ~/.oh-my-zsh/custom/plugins/zsh-nvm/zsh-nvm.plugin.zsh
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
