@@ -41,6 +41,7 @@ alias amend="git commit --amend"
 alias nah="git reset --hard HEAD"
 alias clean="git clean -f"
 alias stash="git stash --include-untracked"
+alias ignore="git update-index --assume-unchanged"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 #################################################################
