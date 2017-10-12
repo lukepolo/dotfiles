@@ -74,8 +74,8 @@ alias tf="./vendor/bin/phpunit --filter"
 alias dev="npm run dev"
 alias live="npm run hmr"
 alias watch="npm run watch"
+alias pretty="npm run pretty"
 alias prod="npm run production"
-
 
 #### Workers
 alias retry="php artisan queue:retry all"
