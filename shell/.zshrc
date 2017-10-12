@@ -26,8 +26,9 @@ unset file
 ### Paths
 #################################################################
 
-export PATH=HOME/.dotfiles/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH=HOME/.dotfiles/bin:$PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
 
