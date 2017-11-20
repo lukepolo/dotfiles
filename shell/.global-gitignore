@@ -28,3 +28,5 @@ yarn-error.log
 
 # build bat
 api-build.bat
+
+LocalValetDriver.php

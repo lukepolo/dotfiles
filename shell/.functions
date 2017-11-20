@@ -69,6 +69,10 @@ commit() {
     git push origin ${branch/* /}
 }
 
+deleteBranches() {
+    git branch --merged origin/develop | grep -v master | grep -v develop | grep -v dev | xargs git branch -d
+}
+
 #################################################################
 ### NVM
 #################################################################
