@@ -1,7 +1,7 @@
 [alias]
 	lga = log --oneline --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [core]
-	autocrlf = true
+	autocrlf = input
 	excludesfile = /Users/lukepolicinski/.global-gitignore
 [user]
 	name = Luke Policinski
