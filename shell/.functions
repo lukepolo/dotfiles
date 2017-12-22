@@ -84,3 +84,4 @@ nvmset() {
 nvmdefault() {
     nvm alias default $1
 }
+
