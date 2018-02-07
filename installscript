@@ -46,8 +46,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 echo 'install php'
 echo '------------'
-brew tap homebrew/dupes
-brew tap homebrew/versions
 brew install homebrew/php/php72
 brew install --with-openssl curl
 brew install --with-homebrew-curl php72
@@ -121,8 +119,6 @@ brew services start mongodb
 #################################################################
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 nvm install 8.1.2
 
@@ -136,18 +132,6 @@ brew install yarn
 echo 'install onchange'
 echo '----------------'
 npm install -g onchange
-
-echo 'install bower'
-echo '------------'
-npm install -g bower
-
-echo 'install git-open'
-echo '------------'
-npm install -g git-open
-
-echo 'install release-it'
-echo '------------'
-npm install release-it -g
 
 #################################################################
 ### Minio https://minio.io/
