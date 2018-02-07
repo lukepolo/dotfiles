@@ -13,7 +13,7 @@ alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && kill
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Show the lock screen
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias afk='osascript -e "tell application "\""Finder"\"" to sleep"'
 
 ### Navigation
 alias finder="open ."
@@ -116,6 +116,7 @@ alias release="release-it"
 
 # Fixes Files ^M "command not found: ^M"
 alias fixfile="dos2unix"
+alias fixdir="find . -type f -print0 | xargs -0 dos2unix"
 
 # Brew Helpers
 alias rmbrew="brew list | xargs brew rm"
