@@ -77,6 +77,9 @@ alias watch="npm run watch"
 alias pretty="npm run pretty"
 alias prod="npm run production"
 
+### Laravel Echo Server
+alias echos="laravel-echo-server start"
+
 #### Workers
 alias retry="php artisan queue:retry all"
 alias work="php artisan queue:work --tries=1"

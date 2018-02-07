@@ -48,18 +48,20 @@ echo 'install php'
 echo '------------'
 brew tap homebrew/dupes
 brew tap homebrew/versions
-brew tap homebrew/homebrew-php
+brew install homebrew/php/php72
 brew install --with-openssl curl
-brew install --with-homebrew-curl php71
-brew install php71-xdebug
+brew install --with-homebrew-curl php72
+brew install php72-xdebug
 
-brew services start homebrew/php/php71
 
-brew install homebrew/php/php71-mcrypt
-brew install -s homebrew/php/php71-imagick
-brew install homebrew/php/php71-mongodb
-brew install homebrew/php/php71-intl
-brew install homebrew/php/php71-redis
+brew services start homebrew/php/php72
+
+brew install homebrew/php/php72-mcrypt
+brew install -s homebrew/php/php72-imagick
+brew install homebrew/php/php72-mongodb
+brew install homebrew/php/php72-intl
+brew install homebrew/php/php72-redis
+brew install homebrew/php/php72-pcntl
 
 #################################################################
 ### Composer
