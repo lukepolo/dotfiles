@@ -23,22 +23,18 @@ done
 unset file
 
 #################################################################
-### Paths
-#################################################################
-
-export PATH=$PATH:/usr/local/sbin
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH=HOME/.dotfiles/bin:$PATH
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH=~/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
-
-#################################################################
 ### SSH Key
 #################################################################
 
 #import ssh keys in keychain
 ssh-add -A 2>/dev/null
 ssh-add -K ~/.ssh/id_rsa 2>/dev/null
+
+#################################################################
+### PATHS
+#################################################################
+PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/sbin:$PATH"
 
 #################################################################
 ### PHP
@@ -70,7 +66,6 @@ export NVM_AUTO_USE=true
 #################################################################
 
 source $ZSH/oh-my-zsh.sh
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

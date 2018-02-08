@@ -46,20 +46,21 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 echo 'install php'
 echo '------------'
-brew install homebrew/php/php72
-brew install --with-openssl curl
-brew install --with-homebrew-curl php72
+brew tap homebrew/homebrew-php
+brew install php72 --with-argon2
+
 brew install php72-xdebug
-
-
-brew services start homebrew/php/php72
-
-brew install homebrew/php/php72-mcrypt
-brew install -s homebrew/php/php72-imagick
-brew install homebrew/php/php72-mongodb
 brew install homebrew/php/php72-intl
 brew install homebrew/php/php72-redis
 brew install homebrew/php/php72-pcntl
+brew install homebrew/php/php72-mcrypt
+brew install homebrew/php/php72-mongodb
+brew install -s homebrew/php/php72-imagick
+
+brew install --with-openssl curl
+brew install --with-homebrew-curl php72
+
+brew services start homebrew/php/php72
 
 #################################################################
 ### Composer
@@ -68,9 +69,7 @@ brew install homebrew/php/php72-pcntl
 echo 'install composer'
 echo '----------------'
 cd ~/.dotfiles
-curl -sS https://getcomposer.org/installer | php
-echo 'move composer to /usr/local/bin/composer'
-mv -f composer.phar /usr/local/bin/composer
+brew install composer
 
 ### Global Composer Packages
 
