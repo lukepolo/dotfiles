@@ -2,10 +2,10 @@
 	lga = log --oneline --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [core]
     eol = lf
-    safecrlf = true
-	autocrlf = false
+    safecrlf = warn
+	autocrlf = true
 	whitespace = cr-at-eol
-	excludesfile = /Users/lukepolicinski/.global-gitignore
+	excludesfile = /Users/luke/.global-gitignore
 [user]
 	name = Luke Policinski
 	email = luke@lukepolo.com

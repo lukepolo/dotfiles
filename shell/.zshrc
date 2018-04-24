@@ -35,6 +35,7 @@ ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 #################################################################
 PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
+PATH="$PATH:$HOME/.composer/vendor/bin"
 
 #################################################################
 ### PHP

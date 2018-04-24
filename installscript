@@ -49,18 +49,19 @@ echo '------------'
 brew tap homebrew/homebrew-php
 brew install php72 --with-argon2
 
+brew install php72-redis
 brew install php72-xdebug
-brew install homebrew/php/php72-intl
-brew install homebrew/php/php72-redis
-brew install homebrew/php/php72-pcntl
-brew install homebrew/php/php72-mcrypt
-brew install homebrew/php/php72-mongodb
-brew install -s homebrew/php/php72-imagick
+brew install php72-imagick
+
+#brew install homebrew/php/php72-intl
+#brew install homebrew/php/php72-pcntl
+#brew install homebrew/php/php72-mcrypt
+#brew install homebrew/php/php72-mongodb
 
 brew install --with-openssl curl
 brew install --with-homebrew-curl php72
 
-brew services start homebrew/php/php72
+brew services start php72
 
 #################################################################
 ### Composer
@@ -119,7 +120,7 @@ brew services start mongodb
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
-nvm install 8.1.2
+nvm install 8.11.1
 
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
@@ -131,15 +132,6 @@ brew install yarn
 echo 'install onchange'
 echo '----------------'
 npm install -g onchange
-
-#################################################################
-### Minio https://minio.io/
-#################################################################
-
-echo 'install minio'
-echo '------------'
-brew install minio/stable/minio
-mkdir /tmp/minio
 
 #################################################################
 ### Docker
