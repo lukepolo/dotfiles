@@ -5,7 +5,7 @@
     safecrlf = warn
 	autocrlf = true
 	whitespace = cr-at-eol
-	excludesfile = /Users/lukepolicinski/.global-gitignore
+	excludesfile = /Users/luke/.global-gitignore
 [user]
 	name = Luke Policinski
 	email = luke@lukepolo.com
