@@ -1,5 +1,4 @@
-Installation
-========
+# Installation
 
 ```
     git clone git@github.com:lukepolo/dotfiles.git ~/.dotfiles

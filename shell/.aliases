@@ -74,7 +74,7 @@ alias tf="./vendor/bin/phpunit --filter"
 alias dev="npm run dev"
 alias hot="npm run hot"
 alias watch="npm run watch"
-alias pretty="prettier --write './**/*.*(ts|js|json|vue)'"
+alias pretty="prettier --write './**/*.*(ts|js|json|vue|scss|md)'"
 alias prod="npm run production"
 
 ### Laravel Echo Server
