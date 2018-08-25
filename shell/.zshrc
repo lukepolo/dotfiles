@@ -3,6 +3,8 @@ ZSH_THEME="miloshadzic"
 DEFAULT_USER=`whoami`
 plugins=(zsh-nvm laravel5)
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 #################################################################
 ### Custom Config
 #################################################################

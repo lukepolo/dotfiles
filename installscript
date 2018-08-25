@@ -24,6 +24,7 @@ echo 'install oh-my-zhs'
 echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
 curl -L http://install.ohmyz.sh | sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 #symlink zsh prefs
 rm $HOME/.zshrc
@@ -166,6 +167,7 @@ git config core.autocrlf input
 git rm --cached -r .
 git reset --hard
 
+dos2unix ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 dos2unix ~/.oh-my-zsh/custom/plugins/zsh-nvm/zsh-nvm.plugin.zsh
 
 echo '++++++++++++++++++++++++++++++'
