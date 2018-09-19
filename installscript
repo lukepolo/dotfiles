@@ -173,7 +173,7 @@ echo '++++++++++++++++++++++++++++++'
 echo 'Some optional tidbits'
 
 echo '1. set some sensible os x defaults by running: $HOME/.dotfiles/osx/set-defaults.sh'
-echo '2. make a .dotfiles-custom/shell/.aliases for your personal commands'
+echo '2. make a .dotfiles-custom/shell/.(exports,aliases,functions,zshrc) for your personal commands'
 
 echo '++++++++++++++++++++++++++++++'
 echo 'Sometimes ZSH has issues with line endings after installing. Just copy the error and paste into their issues https://github.com/robbyrussell/oh-my-zsh/issues'
