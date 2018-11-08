@@ -23,13 +23,10 @@
 - Yarn (https://github.com/yarnpkg/yarn)
 - Laravel Valet (https://github.com/laravel/valet)
 - Docker
-
-### Misc
-
-- dos2unix sometimes files come with bad endings, and needs to be fixed
-
-* ZSH
+- ZSH
   - Auto Suggestions
   - Spaceship Prompt (https://github.com/denysdovhan/spaceship-prompt)
+- dos2unix
+  - sometimes files come with bad endings, and needs to be fixed
 
 #### Credits to https://github.com/freekmurze/dotfiles
