@@ -25,10 +25,12 @@ echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
 curl -L http://install.ohmyz.sh | sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
 #symlink zsh prefs
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 #################################################################
 ### Homebrew
@@ -67,12 +69,6 @@ echo 'install composer'
 echo '----------------'
 cd ~/.dotfiles
 brew install composer
-
-### Global Composer Packages
-
-echo 'install security checker'
-echo '---------------------'
-composer global require sensiolabs/security-checker
 
 #################################################################
 ### Redis
@@ -114,9 +110,9 @@ brew services start mongodb
 ### Node
 #################################################################
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-nvm install 8.11.1
+nvm install 8.12.0
 
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
@@ -164,6 +160,7 @@ git reset --hard
 
 dos2unix ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 dos2unix ~/.oh-my-zsh/custom/plugins/zsh-nvm/zsh-nvm.plugin.zsh
+find ~/.oh-my-zsh/custom/themes/spaceship-prompt/. -type f -print0 | xargs -0 dos2unix
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
