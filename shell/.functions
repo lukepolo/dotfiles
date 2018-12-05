@@ -85,3 +85,38 @@ nvmdefault() {
     nvm alias default $1
 }
 
+
+port() {
+    if [ $1 ]
+    then
+        sudo -v;
+        echo PIDs:
+        sudo lsof -i tcp:$1 | grep -v "Google"
+        echo "\n"
+        echo Listeners:
+        sudo netstat -vanp tcp | grep $1
+    else
+        echo Must supply a port.
+    fi
+}
+
+kport() {
+    if [ $1 ]
+    then
+        sudo -v;
+        pidsFound=($(sudo lsof -i tcp:$1 | grep -v "Google" | awk 'NR>1{ print $2 }' | sort -u))
+        if (( ${#pidsFound[@]} ))
+        then
+            for pid in "${pidsFound[@]}"
+            do
+                echo Killing $pid
+                #sudo echo $pidsFound | xargs kill -9
+            done
+        else
+            echo Did not find anything running on $1
+        fi
+    else
+        echo Must supply a port.
+    fi
+}
+
