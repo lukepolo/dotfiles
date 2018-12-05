@@ -110,7 +110,7 @@ kport() {
             for pid in "${pidsFound[@]}"
             do
                 echo Killing $pid
-                #sudo echo $pidsFound | xargs kill -9
+                sudo echo $pidsFound | xargs kill -9
             done
         else
             echo Did not find anything running on $1
