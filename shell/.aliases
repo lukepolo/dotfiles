@@ -69,12 +69,16 @@ alias share="valet share"
 alias dusk="php artisan dusk"
 alias t="./vendor/bin/phpunit"
 alias tf="./vendor/bin/phpunit --filter"
+alias j="npm run test"
+alias jf="npm run test -- -t"
 
 #### Webpack
 alias dev="npm run dev"
 alias hot="npm run hot"
 alias watch="npm run watch"
 alias pretty="prettier --write './**/*.*(ts|js|json|vue|scss|md|html)'"
+alias pquick="git add -A && pretty-quick --staged --pattern '**/*.*(ts|js|json|vue|scss|md|html)'"
+
 alias prod="npm run production"
 
 ### Laravel Echo Server

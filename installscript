@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# hide "last login" line when starting a new terminal session
+# Hide "last login" line when starting a new terminal session
 touch $HOME/.hushlogin
 
 #################################################################
@@ -42,6 +42,10 @@ echo install homebrew
 rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo 'Install brew-cask'
+echo '-----------------'
+brew tap caskroom/cask
+brew install brew-cask
 
 #################################################################
 ### PHP
@@ -49,17 +53,11 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 echo 'install php'
 echo '------------'
-brew install php72 --with-argon2
+brew install php@7.2
 
-#brew install homebrew/php/php72-intl
-#brew install homebrew/php/php72-pcntl
-#brew install homebrew/php/php72-mcrypt
-#brew install homebrew/php/php72-mongodb
-
-brew install --with-openssl curl
-brew install --with-homebrew-curl php72
-
-brew services start php72
+echo 'Install xdebug'
+echo '--------------'
+pecl install xdebug
 
 #################################################################
 ### Composer
@@ -117,7 +115,7 @@ brew services start mongodb
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-nvm install 8.12.0
+nvm install 10.15.0
 
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
@@ -149,6 +147,14 @@ docker-machine create -d virtualbox dev
 echo 'install dos2unix'
 echo '------------'
 brew install dos2unix
+
+echo 'Install imagemagick'
+echo '-------------------'
+brew install imagemagick
+
+echo 'Install imagick'
+echo '---------------'
+pecl install imagick
 
 #################################################################
 ### Tidbits

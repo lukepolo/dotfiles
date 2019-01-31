@@ -36,17 +36,26 @@ function pushme {
     branch=`git branch | grep "*"`
 
     params=''
-    
+
     for i in $*;
     do
         params=" $params $i"
     done
-    
+
     params=$(echo $params | sed 's,^ *,,; s, *$,,')
-    
+
     git add --all
     git commit -m "$params"
     git push origin ${branch/* /}
+}
+
+rebase() {
+    if [ $1 ]
+        then
+            git pull origin $1 --rebase
+        else
+            echo "Missing branch to rebase from"
+    fi
 }
 
 commit() {
