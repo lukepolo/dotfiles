@@ -119,10 +119,6 @@ nvm install 10.15.0
 
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
-echo 'install yarn'
-echo '------------'
-brew install yarn
-
 # install file watch (needed for watching phpunit tests)
 echo 'install onchange'
 echo '----------------'
