@@ -129,3 +129,23 @@ kport() {
     fi
 }
 
+#################################################################
+### PHP
+#################################################################
+
+phpv() {
+    valet stop
+
+    brew services stop php@7.2
+    brew services stop php@7.3
+
+    brew unlink php@7.2 php@7.3
+    brew link --force --overwrite $1
+
+    brew services start $1
+    composer global update
+    valet install
+}
+
+alias php72="phpv php@7.2"
+alias php73="phpv php@7.3"
