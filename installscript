@@ -128,18 +128,6 @@ echo '----------------'
 npm install -g onchange
 
 #################################################################
-### Docker
-#################################################################
-
-echo 'install docker'
-echo '------------'
-brew install docker docker-machine
-brew services start docker-machine
-
-# create the vm
-docker-machine create -d virtualbox dev
-
-#################################################################
 ### Random
 #################################################################
 

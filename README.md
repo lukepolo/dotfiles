@@ -22,7 +22,6 @@
 - NVM (https://github.com/creationix/nvm)
 - Yarn (https://github.com/yarnpkg/yarn)
 - Laravel Valet (https://github.com/laravel/valet)
-- Docker
 - ZSH
   - Auto Suggestions
   - Spaceship Prompt (https://github.com/denysdovhan/spaceship-prompt)
