@@ -14,20 +14,6 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 
 #################################################################
-### Load Aliases functions exports
-#################################################################
-
-# Load the shell dotfiles, and then some:
-for file in ~/.dotfiles/shell/.{exports,aliases,functions,secrets}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-
-for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-unset file
-
-#################################################################
 ### SSH Key
 #################################################################
 
@@ -62,6 +48,20 @@ export NVM_AUTO_USE=true
 #################################################################
 
 source $ZSH/oh-my-zsh.sh
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+source $(dirname $(gem which colorls))/tab_complete.sh
+source /usr/local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+#################################################################
+### Load Aliases functions exports
+#################################################################
+
+# Load the shell dotfiles, and then some:
+for file in ~/.dotfiles/shell/.{exports,aliases,functions,secrets}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+
+for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file

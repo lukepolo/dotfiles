@@ -24,13 +24,22 @@ echo 'install oh-my-zhs'
 echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
 curl -L http://install.ohmyz.sh | sh
+
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
 #symlink zsh prefs
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
+#################################################################
+### Install colorls https://github.com/athityakumar/colorls#installation
+#################################################################
+gem install colorls
+
+brew tap homebrew/cask-fonts
 
 #################################################################
 ### Homebrew
@@ -158,11 +167,12 @@ git reset --hard
 
 dos2unix ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 dos2unix ~/.oh-my-zsh/custom/plugins/zsh-nvm/zsh-nvm.plugin.zsh
+dos2unix ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 find ~/.oh-my-zsh/custom/themes/spaceship-prompt/. -type f -print0 | xargs -0 dos2unix
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
-echo 'all done'
+echo 'Please visit https://nerdfonts.com/ and download your flavor of fonts for colorls'
 
 echo '++++++++++++++++++++++++++++++'
 echo 'Some optional tidbits'
