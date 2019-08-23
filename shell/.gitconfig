@@ -1,7 +1,7 @@
 [alias]
 	lga = log --oneline --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [core]
-    	safecrlf = warn
+    safecrlf = warn
 	autocrlf = input
 	whitespace = cr-at-eol
 	excludesfile = ~/.global-gitignore
