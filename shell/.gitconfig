@@ -1,10 +1,10 @@
 [alias]
-	lga = log --oneline --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    lga = log --oneline --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [core]
     safecrlf = warn
-	autocrlf = input
-	whitespace = cr-at-eol
-	excludesfile = ~/.global-gitignore
+    autocrlf = input
+    whitespace = cr-at-eol
+    excludesfile = ~/.global-gitignore
 [user]
-	name = Luke Policinski
-	email = luke@lukepolo.com
+    name = Luke Policinski
+    email = luke@lukepolo.com
