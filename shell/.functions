@@ -59,11 +59,10 @@ rebase() {
 }
 
 commit() {
-
-    echo What JIRA issue are you working on?
+    echo "What JIRA issue are you working on?"
     read issue
 
-    echo What did you work on?
+    echo "What did you work on?"
     read message
 
     if [ ! -z "$issue" ]

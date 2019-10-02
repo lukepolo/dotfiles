@@ -55,6 +55,7 @@ echo '-----------------'
 gem install colorls
 
 brew tap homebrew/cask-fonts
+brew cask install fira-code-font
 
 #################################################################
 ### PHP
@@ -138,8 +139,5 @@ echo '++++++++++++++++++++++++++++++'
 echo 'Instalation was sucessful'
 
 echo '++++++++++++++++++++++++++++++'
-echo 'Next Steps'
-echo '1. Visit https://nerdfonts.com/ and download your flavor of fonts for colorls'
-echo '2. Create .dotfiles-custom/shell/.(exports,aliases,functions,zshrc) for your personal commands'
+echo 'Create .dotfiles-custom/shell/.(exports,aliases,functions,zshrc) for your personal commands'
 
-echo '++++++++++++++++++++++++++++++'
