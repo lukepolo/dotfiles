@@ -7,7 +7,7 @@ alias hosts="sudo vi /etc/hosts"
 
 # List all files colorized in long format
 alias l="colorls --group-directories-first --almost-all"
-alias ll="colorls --group-directories-first --almost-all --long" # detailed list view
+alias ll="colorls --group-directories-first --almost-all --long"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -19,9 +19,6 @@ alias afk='osascript -e "tell application "\""Finder"\"" to sleep"'
 ### Navigation
 alias finder="open ."
 alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 
 ### Network
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
@@ -50,61 +47,40 @@ alias ignore="git update-index --assume-unchanged"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 #################################################################
-### Composer
-#################################################################
-
-alias outdated="composer outdated"
-alias check='php ~/.composer/vendor/sensiolabs/security-checker/./security-checker security:check composer.lock'
-
-
-#################################################################
 ### Laravel Helpers
 #################################################################
 
 alias art="php artisan"
 alias fresh="php artisan cache:clear && php artisan migrate:fresh --seed"
 
-
 #### Valet
 # Share with ngrok
 alias share="valet share"
 
-
 #### Testing
 alias dusk="php artisan dusk"
-alias t="./vendor/bin/phpunit"
-alias tf="./vendor/bin/phpunit --filter"
-alias j="npm run test"
-alias jf="npm run test -- -t"
+alias pt="./vendor/bin/phpunit"
+alias ptf="./vendor/bin/phpunit --filter"
+alias nt="npm run test"
+alias ntf="npm run test -- -t"
 
 #### Webpack
 alias dev="npm run dev"
-alias hot="npm run hot"
+alias prod="npm run prod"
 alias watch="npm run watch"
 alias pretty="prettier --write './**/*.*(ts|js|json|vue|scss|md|html)'"
 alias pquick="git add -A && pretty-quick --staged --pattern '**/*.*(ts|js|json|vue|scss|md|html)'"
-
-alias prod="npm run production"
 
 ### Laravel Echo Server
 alias echos="laravel-echo-server start"
 alias sockets="npm run websocket-server"
 
-#### Workers
-alias retry="php artisan queue:retry all"
-alias work="php artisan queue:work --tries=1"
-
 ### Horizon
 alias workers="php artisan horizon"
-alias stopWorkers="php artisan horizon:terminate"
-alias restartWorkers="stopWorkers && workers"
-alias pauseWorkers="php artisan horizon:pause"
-alias continue="php artisan horizon:continue"
 
 #### Homestead
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
-
 
 #################################################################
 ### CodePier Helpers
@@ -112,27 +88,9 @@ alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset 
 
 alias routes="php artisan laroute:generate"
 
-
-#################################################################
-### Release IT - https://webpro.github.io/release-it
-#################################################################
-
-alias release="release-it"
-
-
 #################################################################
 ### Random
 #################################################################
-
-# Fixes Files ^M "command not found: ^M"
-alias fixfile="dos2unix"
-alias fixdir="find . -type f -print0 | xargs -0 dos2unix"
-
-# Brew Helpers
-alias rmbrew="brew list | xargs brew rm"
-
-# Starts Minio Server
-alias s3="open http://127.0.0.1:9005; minio server --address :9005 /tmp/minio"
 
 # Fix Node Sass
 alias fixSass="npm rebuild node-sass"

@@ -12,20 +12,22 @@
 
 ### Software
 
+- Colorls
 - Homebrew
-- PHP 7.2
-  - Composer
-  - On Change (for watching PHP unit tests)
-- Redis
+- imagemagick
+- imagick
+- Laravel Valet (https://github.com/laravel/valet)
 - Mongo
 - Mysql 7
 - NVM (https://github.com/creationix/nvm)
-- Yarn (https://github.com/yarnpkg/yarn)
-- Laravel Valet (https://github.com/laravel/valet)
+- PHP 7.1 / 7.2 / 7.3
+  - Composer
+  - On Change (for watching PHP unit tests)
+- Redis
 - ZSH
-  - Auto Suggestions
+  - Auto Suggestions (https://github.com/zsh-users/zsh-autosuggestions)
+  - NVM (https://github.com/lukechilds/zsh-nvm)
+  - Syntax Highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
   - Spaceship Prompt (https://github.com/denysdovhan/spaceship-prompt)
-- dos2unix
-  - sometimes files come with bad endings, and needs to be fixed
 
 #### Credits to https://github.com/freekmurze/dotfiles

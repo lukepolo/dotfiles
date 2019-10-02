@@ -13,9 +13,6 @@ ln -s $HOME/.dotfiles/shell/.gitconfig $HOME/.gitconfig
 git config --global core.excludesfile $HOME/.global-gitignore
 clear
 
-# global git config setup
-git config --global core.autocrlf true
-
 #################################################################
 ### ZSH
 #################################################################
@@ -23,23 +20,17 @@ git config --global core.autocrlf true
 echo 'install oh-my-zhs'
 echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
+curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/zsh-syntax-highlighting
 
 #symlink zsh prefs
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
-#################################################################
-### Install colorls https://github.com/athityakumar/colorls#installation
-#################################################################
-gem install colorls
-
-brew tap homebrew/cask-fonts
+ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
 
 #################################################################
 ### Homebrew
@@ -51,10 +42,19 @@ echo install homebrew
 rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo 'Install brew-cask'
+echo 'install brew-cask'
 echo '-----------------'
 brew tap caskroom/cask
 brew install brew-cask
+
+#################################################################
+### Install colorls https://github.com/athityakumar/colorls#installation
+#################################################################
+echo 'install colorls for terminal'
+echo '-----------------'
+gem install colorls
+
+brew tap homebrew/cask-fonts
 
 #################################################################
 ### PHP
@@ -62,10 +62,11 @@ brew install brew-cask
 
 echo 'install php'
 echo '------------'
+brew install php@7.1
 brew install php@7.2
 brew install php@7.3
 
-echo 'Install xdebug'
+echo 'install xdebug'
 echo '--------------'
 pecl install xdebug
 
@@ -108,11 +109,6 @@ brew install mysql
 brew services start mysql
 
 #################################################################
-### Sequel Pro
-#################################################################
-brew cask install homebrew/cask-versions/sequel-pro-nightly
-
-#################################################################
 ### Mongo
 #################################################################
 
@@ -122,66 +118,28 @@ brew install mongo
 brew services start mongodb
 
 #################################################################
-### Node
+### Images
 #################################################################
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
-nvm install 10.15.0
-
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-
-# install file watch (needed for watching phpunit tests)
-echo 'install onchange'
-echo '----------------'
-npm install -g onchange
-
-#################################################################
-### Random
-#################################################################
-
-echo 'install dos2unix'
-echo '------------'
-brew install dos2unix
-
-echo 'Install imagemagick'
+echo 'install imagemagick'
 echo '-------------------'
 brew install imagemagick
 
-echo 'Install imagick'
+echo 'install imagick'
 echo '---------------'
 pecl install imagick
 
 #################################################################
-### Tidbits
+### User Information
 #################################################################
 
-echo 'fixing ZSH'
-echo '------------'
-
-cd ~/.oh-my-zsh
-
-git config core.autocrlf input
-git rm --cached -r .
-git reset --hard
-
-dos2unix ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-dos2unix ~/.oh-my-zsh/custom/plugins/zsh-nvm/zsh-nvm.plugin.zsh
-dos2unix ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-find ~/.oh-my-zsh/custom/themes/spaceship-prompt/. -type f -print0 | xargs -0 dos2unix
-
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
-echo 'Please visit https://nerdfonts.com/ and download your flavor of fonts for colorls'
+echo 'Instalation was sucessful'
 
 echo '++++++++++++++++++++++++++++++'
-echo 'Some optional tidbits'
-
-echo '1. set some sensible os x defaults by running: $HOME/.dotfiles/osx/set-defaults.sh'
-echo '2. make a .dotfiles-custom/shell/.(exports,aliases,functions,zshrc) for your personal commands'
-
-echo '++++++++++++++++++++++++++++++'
-echo 'Sometimes ZSH has issues with line endings after installing. Just copy the error and paste into their issues https://github.com/robbyrussell/oh-my-zsh/issues'
+echo 'Next Steps'
+echo '1. Visit https://nerdfonts.com/ and download your flavor of fonts for colorls'
+echo '2. Create .dotfiles-custom/shell/.(exports,aliases,functions,zshrc) for your personal commands'
 
 echo '++++++++++++++++++++++++++++++'
-echo 'Please report issues!'

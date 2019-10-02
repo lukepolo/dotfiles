@@ -1,19 +1,7 @@
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="spaceship"
 DEFAULT_USER=`whoami`
-plugins=(zsh-nvm)
 
 #################################################################
-### Load ZSH
-#################################################################
-
-source $ZSH/oh-my-zsh.sh
-source $(dirname $(gem which colorls))/tab_complete.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-#################################################################
-### Custom Config
+### Key Bindings
 #################################################################
 
 # Allow to use home and end in terminal
@@ -34,15 +22,6 @@ PATH="$PATH:$HOME/.composer/vendor/bin"
 export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_host=127.0.0.1 remote_connect_back=0"
 
 #################################################################
-### NVM Autoloader Options
-#################################################################
-
-## You can only select one of these :-(
-#export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
-
-
-#################################################################
 ### Load Aliases functions exports
 #################################################################
 
@@ -55,3 +34,17 @@ for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+
+#################################################################
+### Load ZSH + Plugins
+#################################################################
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="spaceship"
+
+NVM_AUTO_USE=true
+
+plugins=(git zsh-nvm zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+source $(dirname $(gem which colorls))/tab_complete.sh
+source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
