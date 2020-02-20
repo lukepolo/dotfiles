@@ -42,11 +42,6 @@ echo install homebrew
 rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo 'install brew-cask'
-echo '-----------------'
-brew tap caskroom/cask
-brew install brew-cask
-
 #################################################################
 ### Install colorls https://github.com/athityakumar/colorls#installation
 #################################################################
@@ -55,7 +50,7 @@ echo '-----------------'
 gem install colorls
 
 brew tap homebrew/cask-fonts
-brew cask install fira-code-font
+brew cask install font-fira-code
 
 #################################################################
 ### PHP
@@ -63,9 +58,9 @@ brew cask install fira-code-font
 
 echo 'install php'
 echo '------------'
-brew install php@7.1
 brew install php@7.2
 brew install php@7.3
+brew install php@7.4
 
 echo 'install xdebug'
 echo '--------------'
@@ -77,7 +72,6 @@ pecl install xdebug
 
 echo 'install composer'
 echo '----------------'
-cd ~/.dotfiles
 brew install composer
 
 #################################################################
