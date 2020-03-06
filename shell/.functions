@@ -145,10 +145,6 @@ kport() {
 phpv() {
     valet stop
 
-    brew services stop php@7.2
-    brew services stop php@7.3
-    brew services stop php@7.4
-
     brew unlink php@7.2 php@7.3 php@7.4
     brew link --force --overwrite $1
 
