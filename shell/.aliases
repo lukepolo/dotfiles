@@ -73,7 +73,7 @@ alias pquick="git add -A && pretty-quick --staged --pattern '**/*.*(ts|js|json|v
 
 ### Laravel Echo Server
 alias echos="laravel-echo-server start"
-alias sockets="npm run websocket-server"
+alias sockets="php artisan websockets:serve"
 
 ### Horizon
 alias workers="php artisan horizon"

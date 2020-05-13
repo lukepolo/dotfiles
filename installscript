@@ -62,9 +62,14 @@ brew install php@7.2
 brew install php@7.3
 brew install php@7.4
 
+
 echo 'install xdebug'
 echo '--------------'
 pecl install xdebug
+
+echo 'install redis'
+echo '--------------'
+pecl install redis
 
 #################################################################
 ### Composer
