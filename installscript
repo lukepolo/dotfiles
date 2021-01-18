@@ -58,23 +58,12 @@ clear
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-
 #################################################################
 ### Install colorls https://github.com/athityakumar/colorls#installation
 #################################################################
 echo 'install colorls for terminal'
 echo '-----------------'
 gem install colorls
-
-
-#################################################################
-### Composer
-#################################################################
-
-echo 'install composer'
-echo '----------------'
-brew install composer
-
 
 #################################################################
 ### User Information
