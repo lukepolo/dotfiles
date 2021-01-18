@@ -36,7 +36,7 @@ sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 ### MacUp
 #################################################################
 # Symlink the Mackup config
-ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
+ln -s $HOME/.dotfiles/osx/.mackup.cfg $HOME/.mackup.cfg
 
 echo 'Install mackup'
 echo '--------------'
