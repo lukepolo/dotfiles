@@ -16,10 +16,6 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Show the lock screen
 alias afk='osascript -e "tell application "\""Finder"\"" to sleep"'
 
-### Navigation
-alias finder="open ."
-alias ..="cd .."
-
 ### Network
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
@@ -42,55 +38,16 @@ alias pull="git pull origin"
 alias amend="git commit --amend"
 alias nah="git reset --hard HEAD"
 alias clean="git clean -f"
-alias stash="git stash --include-untracked"
-alias ignore="git update-index --assume-unchanged"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 #################################################################
-### Laravel Helpers
+### Development Helpers
 #################################################################
 
-alias art="php artisan"
-alias fresh="php artisan cache:clear && php artisan migrate:fresh --seed"
-
-#### Valet
-# Share with ngrok
-alias share="valet share"
-
-#### Testing
-alias dusk="php artisan dusk"
-alias pt="./vendor/bin/phpunit"
-alias ptf="./vendor/bin/phpunit --filter"
-alias nt="npm run test"
-alias ntf="npm run test -- -t"
-
 #### Webpack
-alias dev="npm run dev"
-alias prod="npm run prod"
 alias watch="npm run watch"
 alias pretty="prettier --write './**/*.*(ts|js|json|vue|scss|md|html)'"
 alias pquick="git add -A && pretty-quick --staged --pattern '**/*.*(ts|js|json|vue|scss|md|html)'"
 
-### Laravel Echo Server
-alias echos="laravel-echo-server start"
-alias sockets="php artisan websockets:serve"
-
-### Horizon
-alias workers="php artisan horizon"
-
 #### Homestead
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
-alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
-
-#################################################################
-### CodePier Helpers
-#################################################################
-
-alias routes="php artisan laroute:generate"
-
-#################################################################
-### Random
-#################################################################
-
-# Fix Node Sass
-alias fixSass="npm rebuild node-sass"

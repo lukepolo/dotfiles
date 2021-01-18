@@ -11,7 +11,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # 0 - suspend to RAM only (default on desktops)
 # 1 - suspend to disk only
 # 3 - suspend to disk + RAM (default on laptops)
-sudo pmset -a hibernatemode 3
+sudo pmset -a hibernatemode 0
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
