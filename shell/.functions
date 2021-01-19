@@ -2,11 +2,6 @@
 ### OS
 #################################################################
 
-# Create a new directory and enter it
-function mkd() {
-	mkdir -p "$@" && cd "$@"
-}
-
 archive () {
    zip -r "$1".zip -i "$1" ;
 }
@@ -59,7 +54,7 @@ rebase() {
 }
 
 commit() {
-    echo "What JIRA issue are you working on?"
+    echo "What issue are you working on?"
     read issue
 
     echo "What did you work on?"
@@ -92,17 +87,8 @@ rtag() {
 }
 
 #################################################################
-### NVM
+### Port Information
 #################################################################
-
-nvmset() {
-    echo "$1" > .nvmrc
-}
-
-nvmdefault() {
-    nvm alias default $1
-}
-
 
 port() {
     if [ $1 ]
