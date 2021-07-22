@@ -35,6 +35,8 @@ unset file
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="spaceship"
 
+SPACESHIP_DOCKER_SHOW=false
+
 NVM_AUTO_USE=true
 
 plugins=(git zsh-nvm zsh-autosuggestions)
@@ -45,3 +47,4 @@ source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)

@@ -6,5 +6,7 @@
 	autocrlf = input
 	excludesfile = /Users/luke/.global-gitignore
 [user]
-    name = Luke Policinski
-    email = luke@lukepolo.com
+	name = Luke Policinski
+	email = luke@lukepolo.com
+[pull]
+	rebase = true

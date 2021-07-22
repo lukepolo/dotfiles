@@ -49,5 +49,6 @@ alias watch="npm run watch"
 alias pretty="prettier --write './**/*.*(ts|js|json|vue|scss|md|html)'"
 alias pquick="git add -A && pretty-quick --staged --pattern '**/*.*(ts|js|json|vue|scss|md|html)'"
 
-#### Homestead
-alias vm="ssh vagrant@127.0.0.1 -p 2222"
+#### PHP
+alias pt="./vendor/bin/phpunit"
+alias ptf="./vendor/bin/phpunit --filter"
