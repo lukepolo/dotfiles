@@ -73,6 +73,7 @@ commit() {
 }
 
 build() {
+    git add --all
     branch=`git branch | grep "*"`
     git commit -m "#build" --allow-empty
     git push origin ${branch/* /}
