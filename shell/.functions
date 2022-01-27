@@ -72,6 +72,12 @@ commit() {
     git push origin ${branch/* /}
 }
 
+build() {
+    branch=`git branch | grep "*"`
+    git commit -m "#build" --allow-empty
+    git push origin ${branch/* /}
+}
+
 deleteBranches() {
     git branch --merged origin/develop | grep -v master | grep -v develop | grep -v dev | xargs git branch -d
 }
