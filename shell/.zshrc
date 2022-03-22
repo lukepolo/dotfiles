@@ -13,7 +13,6 @@ bindkey  "^[[F"   end-of-line
 #################################################################
 PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
-PATH="$PATH:$HOME/.composer/vendor/bin"
 
 #################################################################
 ### Load Aliases functions exports

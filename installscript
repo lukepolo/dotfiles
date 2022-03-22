@@ -17,7 +17,7 @@ git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custo
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/zsh-syntax-highlighting
 
-#symlink zsh prefs
+# symlink zsh configs
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
@@ -55,7 +55,7 @@ brew install mackup
 ### GIT
 #################################################################
 
-# global gitigore
+# global gitignore
 ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
 ln -s $HOME/.dotfiles/shell/.gitconfig $HOME/.gitconfig
 git config --global core.excludesfile $HOME/.global-gitignore
@@ -64,7 +64,7 @@ git config --global core.excludesfile $HOME/.global-gitignore
 ### NVM
 #################################################################
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 #################################################################
 ### Install colorls https://github.com/athityakumar/colorls#installation
@@ -74,7 +74,7 @@ echo '-----------------'
 gem install colorls
 
 #################################################################
-### Kubes
+### Kubectl
 #################################################################
 echo 'install kubectl'
 echo '-----------------'
