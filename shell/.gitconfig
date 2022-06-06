@@ -10,3 +10,5 @@
 	email = luke@lukepolo.com
 [pull]
 	rebase = true
+[rerere]
+	enabled = true
