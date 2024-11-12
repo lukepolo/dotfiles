@@ -28,6 +28,8 @@ for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
 done
 unset file
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 #################################################################
 ### Load ZSH + Plugins
 #################################################################
@@ -41,9 +43,10 @@ NVM_AUTO_USE=true
 plugins=(git zsh-nvm zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source $(dirname $(gem which colorls))/tab_complete.sh
 source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)

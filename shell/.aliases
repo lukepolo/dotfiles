@@ -45,10 +45,5 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 #################################################################
 
 #### Webpack
-alias watch="npm run watch"
 alias pretty="prettier --write './**/*.*(ts|js|json|vue|scss|md|html)'"
 alias pquick="git add -A && pretty-quick --staged --pattern '**/*.*(ts|js|json|vue|scss|md|html)'"
-
-#### PHP
-alias pt="./vendor/bin/phpunit"
-alias ptf="./vendor/bin/phpunit --filter"

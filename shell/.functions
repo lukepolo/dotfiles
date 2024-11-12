@@ -7,21 +7,6 @@ archive () {
 }
 
 #################################################################
-### MySQL
-#################################################################
-
-function db {
-    if [ "$1" = "refresh" ]; then
-        echo "drop database $2;" | mysql -u root
-        echo "create database $2;" | mysql -u root
-    elif [ "$1" = "create" ]; then
-        echo "create database $2;" | mysql -u root
-    elif [ "$1" = "drop" ]; then
-         echo "drop database $2;" | mysql -u root
-    fi
-}
-
-#################################################################
 ### GIT
 #################################################################
 
@@ -76,6 +61,13 @@ build() {
     git add --all
     branch=`git branch | grep "*"`
     git commit -m "#build" --allow-empty --no-verify
+    git push origin ${branch/* /}
+}
+
+buildall() {
+    git add --all
+    branch=`git branch | grep "*"`
+    git commit -m "#buildalll" --allow-empty --no-verify
     git push origin ${branch/* /}
 }
 

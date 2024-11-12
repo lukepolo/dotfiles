@@ -31,13 +31,6 @@ echo '----------------'
 echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install --cask iterm2
-
-#################################################################
-### Fonts
-#################################################################
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
 
 #################################################################
 ### MacUp
@@ -62,28 +55,14 @@ git config --global core.excludesfile $HOME/.global-gitignore
 ### NVM
 #################################################################
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-#################################################################
-### Install colorls https://github.com/athityakumar/colorls#installation
-#################################################################
-echo 'install colorls for terminal'
-echo '-----------------'
-gem install colorls
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
 #################################################################
 ### Kubectl
 #################################################################
 echo 'install kubectl'
 echo '-----------------'
-brew intall kubectl
-
-#################################################################
-### GraphQL
-#################################################################
-echo 'install graphql playground'
-echo '-----------------'
-brew install --cask graphql-playground
+brew install kubectl
 
 #################################################################
 ### User Information
