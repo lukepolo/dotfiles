@@ -208,10 +208,17 @@ command_not_found_handler() {
         (( ${#mine} == 1 )) && found=( ${mine[@]} )
     fi
 
+    # Nothing close enough? A truncation like "push" or "claud" is still a
+    # unique prefix of exactly one real command often enough to be worth it.
+    if (( ! ${#found} )); then
+        found=( ${(M)pool:#(#i)${(b)typo}?##} )
+        (( ${#found} > 1 )) && found=( ${${found:*own}:-${found[@]}} )
+    fi
+
     case ${#found} in
         0) ;;
         1) suggest_command "${found[1]}" "${args[@]}" ;;
-        *) print -Pu2 "%F{yellow}did you mean:%f ${(j:, :)found}" ;;
+        *) print -Pu2 "%F{yellow}did you mean:%f ${(j:, :)found[1,6]}" ;;
     esac
 
     return 127
