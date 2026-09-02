@@ -30,3 +30,4 @@ yarn-error.log
 api-build.bat
 
 LocalValetDriver.php
+**/.claude/settings.local.json

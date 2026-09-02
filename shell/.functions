@@ -29,6 +29,13 @@ function pushme {
     git push origin ${branch/* /}
 }
 
+wip() {
+    git add --all
+    branch=`git branch | grep "*"`
+    git commit -m "wip" --allow-empty --no-verify
+    git push origin ${branch/* /}
+}
+
 rebase() {
     if [ $1 ]
         then
@@ -121,4 +128,91 @@ kport() {
     else
         echo Must supply a port.
     fi
+}
+
+
+chrome() {
+    # Ask for profile name if not provided as argument, default to chrome-temp-profile
+    if [ -z "$1" ]; then
+        read "profile?Enter Chrome profile name [chrome-temp-profile]: "
+        profile=${profile:-chrome-temp-profile}
+    else
+        profile="$1"
+    fi
+    echo "Opening Chrome with profile: ~/.${profile}"
+    open -na "Google Chrome" --args --user-data-dir="/tmp/${profile}"
+}
+
+
+clp() {
+  CLAUDE_CONFIG_DIR="$HOME/.claude-account-2" command claude "$@"
+}
+#################################################################
+### Typo Correction
+#################################################################
+
+# Show a correction and push it onto the next prompt, ready to run.
+suggest_command() {
+    local fixed="$1"
+    shift
+    print -Pu2 "%F{yellow}did you mean:%f $fixed $*"
+    print -z -- "$fixed ${(j: :)${(q-)@}}"
+}
+
+# When a command isn't found, look for a close match among the aliases,
+# functions and binaries that actually exist. A single confident match gets
+# loaded into the next prompt so it's one Enter away -- nothing runs on its own.
+command_not_found_handler() {
+    local typo=$1
+    shift
+    local -a args=("$@")
+
+    print -u2 "zsh: command not found: $typo"
+
+    # Paths, flags and very short words aren't worth guessing at.
+    [[ $typo == */* || $typo == -* || ${#typo} -lt 4 ]] && return 127
+
+    setopt local_options extended_glob
+    zmodload -i zsh/parameter
+    (( ${#commands} > 50 )) || rehash
+
+    local -a own=( ${(k)aliases} ${(k)functions} )
+    local -a pool=( ${(u)own[@]} ${(k)commands} )
+
+    # A misplaced space: "codepie rup" and "codepieru p" are both "codepier up".
+    if (( ${#args} )); then
+        local stole="${typo}${args[1][1]}"   # the next word starts with our last letter
+        local gave="${typo[1,-2]}"           # our last letter belongs to the next word
+        if (( ${#args[1]} > 1 )) && (( ${pool[(Ie)$stole]} )); then
+            suggest_command "$stole" "${args[1][2,-1]}" "${args[2,-1][@]}"
+            return 127
+        elif (( ${#typo} > 4 )) && (( ${pool[(Ie)$gave]} )); then
+            suggest_command "$gave" "${typo[-1]}${args[1]}" "${args[2,-1][@]}"
+            return 127
+        fi
+    fi
+
+    # Otherwise match approximately, closest spelling first. Longer words can
+    # absorb more errors -- two is enough for a transposition like "swtich".
+    local -a found
+    local fuzz maxfuzz=1
+    (( ${#typo} >= 6 )) && maxfuzz=2
+    for (( fuzz = 1; fuzz <= maxfuzz; fuzz++ )); do
+        found=( ${(M)pool:#(#ia${fuzz})${(b)typo}} )
+        (( ${#found} )) && break
+    done
+
+    # Ties go to your own aliases and functions over anything on $PATH.
+    if (( ${#found} > 1 )); then
+        local -a mine=( ${found:*own} )
+        (( ${#mine} == 1 )) && found=( ${mine[@]} )
+    fi
+
+    case ${#found} in
+        0) ;;
+        1) suggest_command "${found[1]}" "${args[@]}" ;;
+        *) print -Pu2 "%F{yellow}did you mean:%f ${(j:, :)found}" ;;
+    esac
+
+    return 127
 }

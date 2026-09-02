@@ -49,3 +49,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/luke/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/luke/.bun/_bun" ] && source "/Users/luke/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="$PATH:/Users/luke/.codepier/bin" # Added by CodePier
